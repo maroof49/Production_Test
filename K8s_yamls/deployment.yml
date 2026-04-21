@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: mini-project-deployment
+  labels:
+    app: java
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      labels:
+        app: java
+  template:
+    metadata:
+      labels:
+        app: java
+    spec:
+      conatainer:
+        - name: java-app
+          image: maroof49/test_prod:8
+          ports:
+          - conatinerPort: 80
+        
