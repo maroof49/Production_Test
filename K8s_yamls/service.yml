@@ -1,4 +1,4 @@
-apiVersion: va
+apiVersion: v1
 kind: Service
 metadta: 
   name: mini-project-service
