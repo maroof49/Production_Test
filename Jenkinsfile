@@ -35,7 +35,7 @@ pipeline {
           // Login to Docker Hub
           sh "echo ${DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${DOCKER_HUB_CREDENTIALS_USR} --password-stdin"
           // Push image
-          sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
+          #sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
         }
       }
     }
