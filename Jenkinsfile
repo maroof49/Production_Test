@@ -50,7 +50,9 @@ pipeline {
           git config user.name "Maroof49"
           """
 
+          withCredentials([string(credentialsId: 'github-token', variable: 'GIT_TOKEN')]) {
           sh """
+          git remote set-url origin https://x-access-token:${GIT_TOKEN}@github.com/maroof49/Production_Test.git
           git add K8s_yamls/deployment.yml
           git commit -m "Update image to ${imageTag}"
           git push origin HEAD:main
