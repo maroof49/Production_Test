@@ -56,7 +56,7 @@ pipeline {
           git add K8s_yamls/deployment.yml
           git commit -m "Update image to ${imageTag}"
           git push origin HEAD:main
-          """         
+          """  }       
           
         }
       }
