@@ -17,7 +17,7 @@ spec:
     spec:
       conatainer:
         - name: java-app
-          image: test/test_prod:24
+          image: maroof49/test_prod:25
           ports:
           - conatinerPort: 80
         
