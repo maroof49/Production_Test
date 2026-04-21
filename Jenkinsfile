@@ -40,5 +40,26 @@ pipeline {
       }
     }
 
+    stage ('update new image in kubernetes yaml files'){
+      steps{
+        script{ 
+          def imageTag = "${DOCKER_IMAGE}:${BUILD_NUMBER}"
+          sh "sed -i 's|image: .*|image: ${imageTag}|g' k8s/deployment.yaml"
+          sh """
+          git config user.email "jenkins@yourcompany.com
+          git config user.name "Jenkins CI"
+          """
+
+          sh """
+          git add k8s/deployment.yaml
+          git commit -m "Update image to ${imageTag}"
+          git push origin HEAD:main
+          """
+          
+          
+        }
+      }
+    }
+
   }
 }
