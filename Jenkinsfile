@@ -46,8 +46,8 @@ pipeline {
           def imageTag = "${DOCKER_IMAGE}:${DOCKER_TAG}"
           sh "sed -i 's|image: .*|image: ${imageTag}|g' K8s_yamls/deployment.yml"
           sh """
-          git config user.email "jenkins@yourcompany.com
-          git config user.name "Jenkins CI"
+          git config user.email "maroof.siddiqui18@gmail.com"
+          git config user.name "Maroof49"
           """
 
           sh """
